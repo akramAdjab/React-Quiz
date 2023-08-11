@@ -87,7 +87,10 @@ export default function App() {
   useEffect(function () {
     fetch("https://api.jsonbin.io/v3/qs/64d67a6ab89b1e2299cf2e03")
       .then((res) => res.json())
-      .then((data) => dispatch({ type: "dataReceived", payload: data.record.questions }))
+      .then((data) => {
+        dispatch({ type: "dataReceived", payload: data.record.questions });
+        console.log(data.record.questions);
+      })
       .catch(() => dispatch({ type: "dataFailed" }));
   }, []);
 
