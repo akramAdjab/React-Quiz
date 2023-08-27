@@ -85,7 +85,7 @@ export default function App() {
   const maxPossiblePoints = questions.reduce((acc, cur) => acc + cur.points, 0);
 
   useEffect(function () {
-    fetch("https://api.jsonbin.io/v3/qs/64d67a6ab89b1e2299cf2e03")
+    fetch("https://api.npoint.io/26a78eea7a461957b3b9")
       .then((res) => res.json())
       .then((data) => {
         dispatch({ type: "dataReceived", payload: data.record.questions });
